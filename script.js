@@ -106,3 +106,15 @@ function loadFromStorage() {
 }
 
 loadFromStorage();
+
+function addGame(name, url, completed = false) {
+    const newgame = new Game(name, url, completed);
+    gameslib.push(newgame);
+    saveToLocalStorage();
+    adddiv(newgame);
+}
+
+if (gameslib.length === 0) {
+    addGame("Cyberpunk 2077", "https://upload.wikimedia.org/wikipedia/en/9/9f/Cyberpunk_2077_box_art.jpg", false);
+    addGame("Assassins Creed Valhalla", "https://upload.wikimedia.org/wikipedia/en/f/ff/Assassin%27s_Creed_Valhalla_cover.jpg", true);
+}
